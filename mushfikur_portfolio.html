@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mushfikur Rahman Rahim — Economist & Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --ink-light: #4a4a6a;
+    --ink-muted: #8888aa;
+    --cream: #faf8f3;
+    --warm: #f5f0e8;
+    --gold: #c9a84c;
+    --gold-light: #e8d49a;
+    --gold-dark: #8a6f2e;
+    --teal: #1d6a5a;
+    --teal-light: #e1f5ee;
+    --accent: #2c3e7a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background: rgba(250, 248, 243, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 4rem;
+    gap: 4rem;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    background: rgba(201,168,76,0.12);
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    border-left: 2px solid var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-dark);
+  }
+
+  .hero-bio {
+    font-size: 1rem;
+    color: var(--ink-light);
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--ink);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1.5px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-img-frame {
+    position: relative;
+    width: 380px;
+    height: 460px;
+  }
+
+  .hero-img-frame::before {
+    content: '';
+    position: absolute;
+    top: 20px; left: 20px;
+    right: -20px; bottom: -20px;
+    border: 1.5px solid var(--gold-light);
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+  .hero-img-placeholder {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ddd8cc 0%, #c8c2b6 100%);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 0.85rem;
+    overflow: hidden;
+  }
+
+  /* The initials avatar */
+  .avatar-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    border: 2px solid var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: -20px;
+    right: -30px;
+    background: var(--cream);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    z-index: 2;
+  }
+
+  .stat { text-align: center; }
+  .stat-num {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 4rem; }
+  section:nth-child(even) { background: var(--warm); }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--ink-light);
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .interests-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+  .interests-list li {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-dark);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  .lang-card {
+    background: var(--cream);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .lang-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    margin-bottom: 0.75rem;
+  }
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .lang-item:last-child { border-bottom: none; }
+  .lang-name { font-weight: 500; font-size: 0.9rem; }
+  .lang-level {
+    font-size: 0.8rem;
+    color: var(--teal);
+    background: var(--teal-light);
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--cream);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .skill-icon {
+    width: 40px; height: 40px;
+    background: rgba(201,168,76,0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .skill-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+  }
+
+  .skill-items {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* EXPERIENCE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold-light);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-role {
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-org {
+    font-size: 0.88rem;
+    color: var(--gold-dark);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+  .timeline-desc li { margin-bottom: 0.3rem; padding-left: 0.5rem; }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: var(--cream);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--teal));
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201,168,76,0.4);
+  }
+
+  .project-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgba(201,168,76,0.15);
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    line-height: 1;
+  }
+
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    max-width: 90%;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .project-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    background: var(--warm);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--ink-muted);
+    border-radius: 2px;
+  }
+
+  /* EDUCATION */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 2rem;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .edu-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--teal-light);
+    color: var(--teal);
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-school {
+    font-size: 0.88rem;
+    color: var(--gold-dark);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-result {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-year {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .scholarship-list {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    list-style: none;
+  }
+  .scholarship-list li {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    padding: 3px 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .scholarship-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.6rem;
+    top: 5px;
+  }
+
+  /* CONTACT */
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info-list { list-style: none; margin-top: 2rem; }
+  .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .contact-info-item:last-child { border-bottom: none; }
+
+  .contact-icon {
+    width: 38px; height: 38px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .contact-detail { flex: 1; }
+  .contact-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 0.2rem;
+  }
+  .contact-value {
+    font-size: 0.92rem;
+    color: var(--ink);
+    font-weight: 500;
+    word-break: break-all;
+  }
+  .contact-value a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-value a:hover { color: var(--gold-dark); }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 18px;
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: var(--ink);
+    transition: all 0.2s;
+  }
+  .social-link:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem 4rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+  footer span { color: var(--gold-dark); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; }
+    .hero-visual { display: none; }
+    .hero-cta { justify-content: center; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    .timeline { padding-left: 1.5rem; }
+    .timeline-item { padding-left: 1rem; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag, .hero h1, .hero-bio, .hero-cta {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero h1 { animation-delay: 0.1s; }
+  .hero-bio { animation-delay: 0.2s; }
+  .hero-cta { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Mushfikur R. Rahim</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Research</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">Economist · Researcher · Analyst</div>
+    <h1>Mushfikur<br><em>Rahman Rahim</em></h1>
+    <p class="hero-bio">
+      Motivated Economics graduate from East West University with hands-on experience in research, data analysis, and teaching. Seeking opportunities in analytics, research consultancy, and project management.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#projects" class="btn-outline">View Research</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-img-frame">
+      <div class="hero-img-placeholder">
+        <div class="avatar-circle">MR</div>
+        <p style="font-size:0.78rem; color: var(--ink-muted);">Mushfikur Rahman Rahim</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">3.58</span>
+          <span class="stat-label">CGPA / 4.0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1.8</span>
+          <span class="stat-label">Yrs Exp.</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">7</span>
+          <span class="stat-label">IELTS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <h2 class="section-title">An economist passionate about data-driven insight</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a recent BSS Economics graduate from East West University, Dhaka, with a CGPA of 3.58/4.0. My academic journey was enriched by Merit and Medha Lalon Fund Scholarships, reflecting my commitment to excellence.</p>
+      <p>My work spans university teaching assistance, field research for public health projects, and economic modeling. I combine quantitative analysis with strong communication skills to deliver meaningful research outcomes.</p>
+      <p>I have a National Championship in Asian Parliamentary Debate, and high proficiency in English (IELTS 7 — C1 level), enabling me to work in international research environments.</p>
+      <ul class="interests-list">
+        <li>Macroeconomics</li>
+        <li>Development Economics</li>
+        <li>Forecasting</li>
+        <li>Econometrics</li>
+        <li>Game Theory</li>
+        <li>Research Consultancy</li>
+      </ul>
+    </div>
+    <div>
+      <div class="lang-card">
+        <div class="lang-title">Language Proficiency</div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">C1 · IELTS 7</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Bengali</span>
+          <span class="lang-level">Native</span>
+        </div>
+      </div>
+      <div class="lang-card" style="margin-top: 1.5rem;">
+        <div class="lang-title">Preferred Sectors</div>
+        <div class="lang-item">
+          <span style="font-size:0.88rem; color: var(--ink-light);">Investment / Merchant Banking</span>
+        </div>
+        <div class="lang-item">
+          <span style="font-size:0.88rem; color: var(--ink-light);">Market Research Firms</span>
+        </div>
+        <div class="lang-item">
+          <span style="font-size:0.88rem; color: var(--ink-light);">Research Organizations</span>
+        </div>
+        <div class="lang-item">
+          <span style="font-size:0.88rem; color: var(--ink-light);">Development / Consultancy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Capabilities</div>
+  <h2 class="section-title">Technical skills & tools</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-name">Programming</div>
+      <div class="skill-items">Python · R · Stata</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Data Analysis</div>
+      <div class="skill-items">Econometrics · Applied Econometrics · Statistical Modelling</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📝</div>
+      <div class="skill-name">Microsoft Office</div>
+      <div class="skill-items">Excel (Advanced) · Word · PowerPoint</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔍</div>
+      <div class="skill-name">Research Methods</div>
+      <div class="skill-items">Field Surveys · Data Collection · Cost-Benefit Analysis · Project Evaluation</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🎨</div>
+      <div class="skill-name">Design & Content</div>
+      <div class="skill-items">Canva · Professional Content Writing · Web Content Writing</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗣️</div>
+      <div class="skill-name">Communication</div>
+      <div class="skill-items">English C1 (IELTS 7) · Academic Writing · Debate & Public Speaking</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Where I've contributed</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">Jan 2026 — Apr 2026</div>
+      <div class="timeline-role">Graduate Teaching Assistant</div>
+      <div class="timeline-org">East West University, Dhaka</div>
+      <ul class="timeline-desc">
+        <li>Supported faculty with note preparation and student tutoring</li>
+        <li>Worked with accreditation team for International Accreditation Status</li>
+        <li>Engaged with data processing for CLO/PLO work</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Aug 2024 — Dec 2025</div>
+      <div class="timeline-role">Undergraduate Teaching Assistant</div>
+      <div class="timeline-org">East West University, Dhaka</div>
+      <ul class="timeline-desc">
+        <li>Helped faculty by arranging notes and teaching struggling students</li>
+        <li>Collaborated with accreditation team to achieve international accreditation</li>
+        <li>Handled data processing for CLO/PLO academic outcomes</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Jan 2024 — Mar 2024</div>
+      <div class="timeline-role">Field Research Assistant — Pathways to Equitable Healthy Cities</div>
+      <div class="timeline-org">BRAC James P Grant School of Public Health, BRAC University</div>
+      <ul class="timeline-desc">
+        <li>Performed field surveys and data interpretation for the Healthy Cities project</li>
+        <li>Collaborated with the research team to ensure accurate data reporting</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Jan 2024 — Mar 2024</div>
+      <div class="timeline-role">Field Research Assistant — Metro Rail Approach Project</div>
+      <div class="timeline-org">BRAC James P Grant School of Public Health, BRAC University</div>
+      <ul class="timeline-desc">
+        <li>Assisted in field research and community data gathering</li>
+        <li>Conducted community interviews for the Metro Rail Approach study</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Research & Projects</div>
+  <h2 class="section-title">Academic & research work</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-num">01</div>
+      <div class="project-title">Automation and Capital Dynamics in Emerging Asian Economies</div>
+      <p class="project-desc">
+        An empirical and simulation-based analysis of an automation-augmented Solow growth model applied to emerging Asian economies. Calibrated using country-level data (2010–2023) and projecting capital dynamics through 2035.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Macroeconomics</span>
+        <span class="project-tag">Python / R</span>
+        <span class="project-tag">Solow Model</span>
+        <span class="project-tag">Simulation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">02</div>
+      <div class="project-title">Pathways to Equitable Healthy Cities</div>
+      <p class="project-desc">
+        Contributed to a field research project examining urban health equity. Performed surveys, data interpretation, and collaborated to ensure accurate reporting for the multidisciplinary research team at BRAC University.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Public Health</span>
+        <span class="project-tag">Field Research</span>
+        <span class="project-tag">Survey Design</span>
+        <span class="project-tag">Data Analysis</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <div class="project-title">Professional Content Writing</div>
+      <p class="project-desc">
+        Completed certified training in professional and web content writing, learning to craft compelling, audience-targeted written communication for digital platforms and professional contexts.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Writing</span>
+        <span class="project-tag">Communication</span>
+        <span class="project-tag">Digital Content</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">Academic background</h2>
+  <div class="edu-grid">
+
+    <div class="edu-card">
+      <span class="edu-badge">University</span>
+      <div class="edu-degree">BSS in Economics</div>
+      <div class="edu-school">East West University, Dhaka</div>
+      <div class="edu-result">CGPA: 3.58 / 4.00</div>
+      <div class="edu-year">Jan 2022 — Oct 2025</div>
+      <ul class="scholarship-list">
+        <li>Merit Scholarship (2022)</li>
+        <li>Medha Lalon Fund Scholarship (2023–2024, 2025–2026)</li>
+        <li>Coursework: Mathematical Economics, Game Theory, Econometrics, Cost-Benefit Analysis</li>
+      </ul>
+    </div>
+
+    <div class="edu-card">
+      <span class="edu-badge">HSC</span>
+      <div class="edu-degree">Higher Secondary Certificate</div>
+      <div class="edu-school">Dr. Mahbubur Rahman Mollah College, Jatrabari</div>
+      <div class="edu-result">GPA: 5.00 / 5.00 · Science</div>
+      <div class="edu-year">Jul 2018 — Sep 2020</div>
+    </div>
+
+    <div class="edu-card">
+      <span class="edu-badge">SSC</span>
+      <div class="edu-degree">Secondary School Certificate</div>
+      <div class="edu-school">Milestone College</div>
+      <div class="edu-result">GPA: 5.00 / 5.00 · Science</div>
+      <div class="edu-year">2018</div>
+    </div>
+
+  </div>
+
+  <!-- Leadership -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.4rem; margin-top:3rem; margin-bottom:1.5rem; color:var(--ink);">Leadership & Activities</h3>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <span class="edu-badge">Debate</span>
+      <div class="edu-degree">Sub-Executive, Logistics</div>
+      <div class="edu-school">East West University Debating Club</div>
+      <div class="edu-result" style="margin-top:0.5rem;">Arranged debate events and provided administrative support.</div>
+      <div class="edu-year">2023 — 2024</div>
+    </div>
+    <div class="edu-card">
+      <span class="edu-badge">Champion</span>
+      <div class="edu-degree">General Secretary (Logistics)</div>
+      <div class="edu-school">DMRC Debating Club</div>
+      <div class="edu-result" style="margin-top:0.5rem;">Organized inter-college debate tournaments. Achieved National Championship — Asian Parliamentary Debate.</div>
+      <div class="edu-year">Jul 2019 — Sep 2020</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2 class="section-title">Let's connect</h2>
+  <div class="contact-wrapper">
+    <div>
+      <p style="color:var(--ink-light); margin-bottom:0.5rem;">I'm open to research roles, analytics positions, and consultancy opportunities. Feel free to reach out!</p>
+      <ul class="contact-info-list">
+        <li class="contact-info-item">
+          <div class="contact-icon">✉</div>
+          <div class="contact-detail">
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:rahmanmushfikur12@gmail.com">rahmanmushfikur12@gmail.com</a></div>
+          </div>
+        </li>
+        <li class="contact-info-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+880 1962832776 · +880 1792333239</div>
+          </div>
+        </li>
+        <li class="contact-info-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Demra, Dhaka, Bangladesh</div>
+          </div>
+        </li>
+      </ul>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/rahman-mushfikur-478858247/" target="_blank" class="social-link">
+          in LinkedIn
+        </a>
+        <a href="https://www.facebook.com/mushfikur.rahman.rahim" target="_blank" class="social-link">
+          f Facebook
+        </a>
+      </div>
+    </div>
+    <div>
+      <div style="background:var(--warm); border:1px solid rgba(201,168,76,0.2); border-radius:4px; padding:2rem;">
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-muted); margin-bottom:1.5rem;">References</div>
+        <div style="margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:1px solid rgba(201,168,76,0.15);">
+          <div style="font-weight:500; font-size:0.95rem; color:var(--ink);">Dr. Abul H. M. G. Azam</div>
+          <div style="font-size:0.82rem; color:var(--gold-dark); margin-bottom:0.3rem;">Professor-cum-Adviser, Faculty of Business & Economics</div>
+          <div style="font-size:0.82rem; color:var(--ink-muted);">East West University</div>
+          <div style="font-size:0.82rem; color:var(--ink-muted);">abul.azam@ewubd.edu · +880 1309679247</div>
+        </div>
+        <div>
+          <div style="font-weight:500; font-size:0.95rem; color:var(--ink);">Biplob Kumar Nandi</div>
+          <div style="font-size:0.82rem; color:var(--gold-dark); margin-bottom:0.3rem;">Senior Lecturer, Department of Economics</div>
+          <div style="font-size:0.82rem; color:var(--ink-muted);">East West University</div>
+          <div style="font-size:0.82rem; color:var(--ink-muted);">biplab.ewu@ewubd.edu · +880 1725081640</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Mushfikur Rahman Rahim</span> · BSS Economics · East West University</p>
+  <p style="margin-top:0.3rem;">Dhaka, Bangladesh · rahmanmushfikur12@gmail.com</p>
+</footer>
+
+</body>
+</html>
